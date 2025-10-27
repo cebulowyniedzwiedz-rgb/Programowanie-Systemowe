@@ -71,3 +71,6 @@ data.txt:
 $(folder):
 	mkdir $(folder)
 </pre>
+
+## Wnioski
+Make pomaga w automatyzacji różnych celów jak np build, run czy clean. Jest on podręczny gdyż w jednym pliku możemy przechowywać różne cele. Posiadanie zmiennych również ułatwia użytkowanie.
