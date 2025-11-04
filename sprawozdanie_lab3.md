@@ -1,9 +1,35 @@
 # SPRAWOZDANIE - Laboratorium 3
 Sprawozdanie wykonane przez Pawła Rumpla o numerze indeksu 283849 z kierunku Cyberbezpieczeństwo, drugi rok, trzeci semestr. Sprawozdanie dotyczy drugich laboratoriów z przedmiotu Programowanie systemowe. Laboratoria te polegały na użyciu `Make` do kompilacji kodu w języku C. Zajęcia były przeprowadzone na komputerach z systemem Linux w sali laboratoryjnej 127L w budynku C-3. Laboratorium zostało wykonane w dniu 29 października 2025 roku.
 
+## Plik C
+Przygotowałem krótki plik C który zawierał krótką funkcje hello world. 
+```c
+#include <stdio.h>
+int main() {
+   printf("Hello World!");
+   return 0;
+}
+```
 ## Kompilacja dzięki Make
 Zostało nam zadane wykonanie kompilacji pliku w języku C do pliku binarnego wykonywalnego, który miał się znajdować w podfolderze `/build`. Sam kod C miał znajdować się w podfolderze `/src` (od ang. source). Plik, który mieliśmy skompilować, nazywał się `helloworld.c`. Plik binarny miał zachować nazwę, tylko bez końcówki `.c`. `Make` często używa się do kompilacji. Dobrą zasadą stosowaną przy kompilacji jest, żeby plik, który będziemy kompilować, znajdował się w podfolderze `/src`, a plik binarny, który stworzymy, znajdował się w podfolderze `/build`. Do kompilacji używamy komendy `gcc`.
+```make
+SRCDIR := SRC
+OUTDIR := build
+TARGET := helloworld
+CC := gcc
 
+all: $(TARGET)
+
+$(TARGET): $(TARGET).o $(OUTDIR)
+	$(CC) $(OUTDIR)/$(TARGET).o -o $(OUTDIR)/$(TARGET)
+$(TARGET).o: $(OUTDIR)
+	$(CC) -c $(SRCDIR)/$(TARGET).c -o $(OUTDIR)/$(TARGET).o
+clean:
+	rm $(OUTDIR)/$(TARGET)
+$(OUTDIR):
+	mkdir $(OUTDIR)
+
+```
 ## Przypisanie komendy do zmiennej
 Dobrą regułą jest nie przepisywać ciągle tej samej komendy, a zapisać ją jako zmienną, tak samo jak zrobiłem to z komendą `gcc`. Ułatwia to podmianę komendy `gcc` na jakąś inną komendę, którą możemy użyć do kompilacji.
 
