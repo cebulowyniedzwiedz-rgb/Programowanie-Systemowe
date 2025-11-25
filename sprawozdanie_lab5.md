@@ -53,3 +53,4 @@ Funkcja pipe() pozwala nam utworzyć kanał komunikacyjny między procesami. Two
 Funkcja wait(NULL) sprawia, że proces rodzic czeka na zakończenie reszty procesów. NULL oznacza, że nie chcemy zapisywać informacji zwrotnej o zakończeniu procesu dziecka.
 
 ## Wnioski
+Laboratorium pozwoliło na praktyczne zrozumienie mechanizmów tworzenia procesów i komunikacji międzyprocesowej w systemach Linux. Dzięki fork() i pipe() możliwe jest równoległe wykonywanie zadań oraz przesyłanie danych między procesami.
