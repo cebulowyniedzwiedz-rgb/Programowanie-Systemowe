@@ -115,3 +115,5 @@ int main(){
 }
 ```
 
+## Wnioski
+Po skompilowaniu programu za pomocą make można zauważyć, że program działa poprawnie. Oznacza to poprawność sposobu implementacji fork() i pipe().
