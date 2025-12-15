@@ -70,3 +70,7 @@ void worker(int fd, int fd1);
 
 #endif
 ```
+
+## Plik main.c
+W pliku main.c na początku definiowane są dwie zmienne typu int o nazwach fd oraz fd1. Są one odpowiedzialne za obsługę nazwanych pipe’ów. Następnie definiowane są dwie zmienne przechowujące lokalizacje potoków nazwanych. Funkcja main przyjmuje dwa argumenty: argc oraz argv, gdzie argc oznacza liczbę podanych argumentów, a argv jest tablicą tych argumentów. W funkcji main znajduje się fragment kodu, który sprawdza, czy podany został dokładnie jeden argument. W zależności od jego treści wykonywana jest część programu odpowiedzialna za serwer lub za workera. Po stronie serwera potoki nazwane są otwierane i zamykane, a po zakończeniu działania programu usuwane za pomocą funkcji unlink.
+
