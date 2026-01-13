@@ -1,5 +1,5 @@
 
-# SPRAWOZDANIE - Laboratorium 7
+# SPRAWOZDANIE - Laboratorium 8
 Sprawozdanie wykonane przez Pawła Rumpla o numerze indeksu 283849 z kierunku Cyberbezpieczeństwo, drugi rok, trzeci semestr. Sprawozdanie dotyczy ósmych laboratoriów z przedmiotu Programowanie systemowe. Laboratorium to polegało na zapoznaniu się z shared memory i semaforami. Zajęcia były przeprowadzone na komputerach z systemem Linux w sali laboratoryjnej 127L w budynku C-3. Laboratorium zostało wykonane w dniu 17 grudnia 2025 roku.
 
 ## Założenie działanie programu
