@@ -81,6 +81,9 @@ void worker(char *ptr, sem_t *sem_write, sem_t *sem_read);
 
 #endif
 ```
+## Plik main.c
+W pliku main.c tworzone są zmienne takie jak: fd (zmienna typu int używana do utworzenia pamięci współdzielonej), shm_name (zmienna przechowująca nazwę/lokalizację shared memory), sem_write_name (zmienna odpowiadająca za semafor zapisu) oraz sem_read_name (zmienna odpowiadająca za semafor odczytu). Za pomocą funkcji ftruncate rezerwowane jest miejsce w pamięci dla pamięci współdzielonej. Następnie obszar ten mapowany jest do przestrzeni adresowej procesu przy użyciu mmap. W zależności od podanego argumentu program działa w trybie serwera lub klienta i wywołuje odpowiednią funkcję. Na końcu programu należy pamiętać o poprawnym zamknięciu semaforów oraz pamięci współdzielonej, a w przypadku serwera również o ich usunięciu (unlinkowaniu), aby nie pozostawić nieużywanych zasobów w systemie.
+
 ### main.c
 ```c
 #define _POSIX_C_SOURCE 200809L
