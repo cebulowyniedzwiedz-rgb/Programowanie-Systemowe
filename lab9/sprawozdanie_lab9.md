@@ -139,11 +139,31 @@ void* worker(void* arg);
 #endif
 ```
 ### server.h
-```
+```c
 #ifndef SERVER_H
 #define SERVER_H
 
 void server(int write_fd, int read_fd);
 
 #endif
+```
+## Client w Pythonie
+Poniżej przedstawiam kod clienta napisanego w pythonie użytego do komunikacji:
+### client_sieciowy.py
+```py
+import socket
+
+s = socket.socket()
+s.connect(('127.0.0.1', 8080))
+
+while True:
+    try:
+        msg = input()
+        s.send(msg.encode())
+        if msg == 'exit': break
+        print(s.recv(1024).decode())
+    except (EOFError, KeyboardInterrupt):
+        break
+
+s.close()
 ```
